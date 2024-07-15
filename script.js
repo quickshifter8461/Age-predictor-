@@ -8,6 +8,7 @@ const resultEL = document.getElementById("result");
 const regExEmail =
   /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 const regExName = /[a-z]{3}/;
+const resetBtn = document.getElementById("resetBtn")
 
 ageForm.addEventListener("submit", async (submit) => {
   submit.preventDefault();
@@ -48,3 +49,11 @@ ageForm.addEventListener("submit", async (submit) => {
     resultEL.textContent = "Error fetching data. Please try again later.";
   }
 });
+
+resetBtn.addEventListener("click", ()=>{
+  nameEL.value=""
+  emailEl.value=""
+  nameError.textContent=""
+  emailError.textContent=""
+  resultEL.textContent=""
+})
